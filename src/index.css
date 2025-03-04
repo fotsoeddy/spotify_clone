@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+
+/* Override or add custom base styles (like custom colors) */
+@layer base {
+  :root {
+    /* Override the default black color with your custom value */
+    --tw-color-black: #191624;
+  }
+}
+
+/* Define custom keyframes */
+@keyframes slowfade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(25%); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes slidedown {
+  from { opacity: 0; transform: translateY(-25%); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes slideleft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideright {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes wave {
+  0% { transform: scale(0); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0); }
+}
+
+/* Create utilities for your custom animations and color overrides */
+@layer utilities {
+  .animate-slideup {
+    animation: slideup 1s ease-in-out;
+  }
+  .animate-slidedown {
+    animation: slidedown 1s ease-in-out;
+  }
+  .animate-slideleft {
+    animation: slideleft 1s ease-in-out;
+  }
+  .animate-slideright {
+    animation: slideright 1s ease-in-out;
+  }
+  .animate-wave {
+    animation: wave 1.2s linear infinite;
+  }
+  .animate-slowfade {
+    animation: slowfade 2.2s ease-in-out;
+  }
+
+}
+
+
+/* Active Navigation Link */
+.active {
+  @apply text-cyan-500;
+}
+
+.active svg {
+  @apply text-cyan-500;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.bar:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.bar:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.bar:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
